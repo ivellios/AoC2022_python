@@ -20,8 +20,6 @@ with open("day1.txt", "r+") as f:
         else:
             sums.append(sum_num)
             sum_num = 0
-            # max_num = max(max_num, sum_num)
-            # if max_num != max_1 and max_num <= max_2:
-            #     # max_2 = sum_num
-            #     max_3 = sum_num
-            # sum_num = 0
+
+    sums.sort()
+    print(sums[-1], sums[-2], sums[-3], sums[-3]+sums[-2]+sums[-1])
