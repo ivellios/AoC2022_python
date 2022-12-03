@@ -10,22 +10,17 @@ def find_badge(group: list) -> str:
     )
 
 
-def rucksacks():
+def rucksacks(filename):
     total = 0
-    with open("day3.txt", "r") as f:
+    with open(filename, "r") as f:
         while True:
             data = [
                 f.readline().rstrip("\n"),
                 f.readline().rstrip("\n"),
                 f.readline().rstrip("\n"),
             ]
-            print(data)
             if not data or "" in data:
                 break
             total += char_to_value(find_badge(data))
 
     print("Total: ", total)
-
-
-if __name__ == "__main__":
-    rucksacks()

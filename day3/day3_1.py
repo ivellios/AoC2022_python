@@ -8,9 +8,9 @@ def rucksack_reorganization(rucksack: str):
     return char_to_value(common.pop())
 
 
-def rucksacks():
+def rucksacks(filename):
     total = 0
-    with open("day3.txt", "r") as f:
+    with open(filename, "r") as f:
         while True:
             data = f.readline().rstrip("\n")
             if not data:
@@ -18,7 +18,3 @@ def rucksacks():
             total += rucksack_reorganization(data)
 
     print("Total: ", total)
-
-
-if __name__ == "__main__":
-    rucksacks()

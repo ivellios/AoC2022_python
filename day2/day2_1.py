@@ -11,10 +11,10 @@ def calc_result(op_choice: str, my_choice: str) -> int:
     return compare(op_choice, my_choice) + my_choices[my_choice]
 
 
-def run():
+def run(filename):
 
     sum = 0
-    with open("day2.txt", "r+") as f:
+    with open(filename, "r+") as f:
         while True:
             data = f.readline()
             if not data:
@@ -22,13 +22,7 @@ def run():
 
             data = data.rstrip(os.linesep)
             op_choice, my_choice = data.split(" ")
-            print(op_choice, my_choice)
             res = calc_result(op_choice, my_choice)
             sum += res
-            print(f"Res: {res} | Sum: {sum}")
 
     print(f"Sum: {sum}")
-
-
-if __name__ == "__main__":
-    run()
