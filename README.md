@@ -1,2 +1,4 @@
 # AoC2022_python
-Python solutions to Adventure of Code 2022
+Python solutions to Adventure of Code 2022'
+
+[![Testing all days](https://github.com/ivellios/AoC2022_python/actions/workflows/tests.yaml/badge.svg)](https://github.com/ivellios/AoC2022_python/actions/workflows/tests.yaml)
