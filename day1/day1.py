@@ -1,7 +1,6 @@
 import os
 
 
-
 def run(filename):
     max_num = 0
     sum_num = 0
