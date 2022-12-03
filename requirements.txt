@@ -3,3 +3,4 @@ pytest-watch
 ipython
 ipdb
 black
+flake8
