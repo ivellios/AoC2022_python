@@ -1,4 +1,4 @@
-from day2_1 import calc_result
+from ..day2_1 import calc_result
 
 
 def test_day2_1():

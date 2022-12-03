@@ -1,4 +1,4 @@
-from day3 import char_to_value, string_to_set
+from .day3 import char_to_value, string_to_set
 
 
 def rucksack_reorganization(rucksack: str):

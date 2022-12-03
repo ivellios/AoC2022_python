@@ -1,4 +1,4 @@
-from day3 import string_to_set, char_to_value
+from .day3 import string_to_set, char_to_value
 
 
 def find_badge(group: list) -> str:

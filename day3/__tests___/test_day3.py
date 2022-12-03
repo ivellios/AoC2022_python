@@ -1,6 +1,6 @@
 import pytest
 
-from day3 import string_to_set, char_to_value
+from ..day3 import string_to_set, char_to_value
 
 
 def test_string_to_set():

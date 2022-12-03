@@ -1,6 +1,6 @@
 import pytest
 
-from day3_1 import rucksack_reorganization, string_to_set, char_to_value
+from ..day3_1 import rucksack_reorganization, string_to_set, char_to_value
 
 
 def test_rucksack_reorganization():

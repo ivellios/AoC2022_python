@@ -1,4 +1,4 @@
-from day2_2 import result_to_choice, calc_result
+from ..day2_2 import result_to_choice, calc_result
 
 
 def test_day2_2():

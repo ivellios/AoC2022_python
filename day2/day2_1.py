@@ -1,6 +1,6 @@
 import os
 
-from day2_consts import RESULTS, my_choices, opponent_choices
+from .day2_consts import RESULTS, my_choices, opponent_choices
 
 
 def compare(op_choice: str, my_choice: str) -> int:

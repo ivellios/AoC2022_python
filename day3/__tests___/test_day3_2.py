@@ -1,6 +1,6 @@
 import pytest
 
-from day3_2 import find_badge
+from ..day3_2 import find_badge
 
 
 @pytest.mark.parametrize(
