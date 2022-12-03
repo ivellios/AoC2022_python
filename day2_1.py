@@ -4,7 +4,7 @@ from day2_consts import RESULTS, my_choices, opponent_choices
 
 
 def compare(op_choice: str, my_choice: str) -> int:
-    return RESULTS[my_choices[my_choice]-1][opponent_choices[op_choice]-1]
+    return RESULTS[my_choices[my_choice] - 1][opponent_choices[op_choice] - 1]
 
 
 def calc_result(op_choice: str, my_choice: str) -> int:

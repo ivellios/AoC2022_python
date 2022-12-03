@@ -22,4 +22,4 @@ with open("day1.txt", "r+") as f:
             sum_num = 0
 
     sums.sort()
-    print(sums[-1], sums[-2], sums[-3], sums[-3]+sums[-2]+sums[-1])
+    print(sums[-1], sums[-2], sums[-3], sums[-3] + sums[-2] + sums[-1])

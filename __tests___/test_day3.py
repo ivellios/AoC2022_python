@@ -16,7 +16,7 @@ def test_string_to_set():
         ("v", 22),
         ("t", 20),
         ("s", 19),
-    )
+    ),
 )
 def test_char_to_value(char, value):
     assert char_to_value(char) == value

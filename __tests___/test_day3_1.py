@@ -20,6 +20,6 @@ def test_rucksack_reorganization():
     assert result == 157
 
 
-def test_rucksack_reorganization_Z():
+def test_rucksack_reorganization_z():
     val = rucksack_reorganization("RddRcjRvZgZNWNgQQb")
     assert val == ord("Z") - ord("A") + 27  # min 1 + 26 for the small letter prio

@@ -2,10 +2,15 @@ import os
 
 from day2_consts import (
     expected_results,
-    DRAW, LOSE, WIN,
-    DRAW_MAP, LOSE_MAP, WIN_MAP,
-    my_choices, RESULTS,
-    opponent_choices
+    DRAW,
+    LOSE,
+    WIN,
+    DRAW_MAP,
+    LOSE_MAP,
+    WIN_MAP,
+    my_choices,
+    RESULTS,
+    opponent_choices,
 )
 
 
@@ -19,7 +24,7 @@ def result_to_choice(op_choice: str, expected_result: str) -> str:
 
 
 def compare(op_choice: str, my_choice: str) -> int:
-    return RESULTS[my_choices[my_choice]-1][opponent_choices[op_choice]-1]
+    return RESULTS[my_choices[my_choice] - 1][opponent_choices[op_choice] - 1]
 
 
 def calc_result(op_choice: str, my_choice: str) -> int:
