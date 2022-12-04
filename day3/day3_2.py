@@ -10,6 +10,9 @@ def find_badge(group: list) -> str:
     )
 
 
+badge_value = lambda lines: char_to_value(find_badge(lines))
+
+
 def rucksacks(filename):
     total = 0
     with open(filename, "r") as f:

@@ -11,8 +11,11 @@ def calc_result(op_choice: str, my_choice: str) -> int:
     return compare(op_choice, my_choice) + my_choices[my_choice]
 
 
-def run(filename):
+def choice_result_value(data):
+    return calc_result(*data.split(" "))
 
+
+def run(filename):
     sum = 0
     with open(filename, "r+") as f:
         while True:
@@ -21,8 +24,6 @@ def run(filename):
                 break
 
             data = data.rstrip(os.linesep)
-            op_choice, my_choice = data.split(" ")
-            res = calc_result(op_choice, my_choice)
-            sum += res
+            sum += choice_result_value(data)
 
     print(f"Sum: {sum}")

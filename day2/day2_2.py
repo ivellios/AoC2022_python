@@ -31,6 +31,12 @@ def calc_result(op_choice: str, my_choice: str) -> int:
     return compare(op_choice, my_choice) + my_choices[my_choice]
 
 
+def pick_choice_result(data: str):
+    op_choice, expected_result = data.split(" ")
+    my_choice = result_to_choice(op_choice, expected_result)
+    return calc_result(op_choice, my_choice)
+
+
 def run(filename):
     sum = 0
     with open(filename, "r+") as f:
@@ -38,11 +44,7 @@ def run(filename):
             data = f.readline()
             if not data:
                 break
-
             data = data.rstrip(os.linesep)
-            op_choice, expected_result = data.split(" ")
-            my_choice = result_to_choice(op_choice, expected_result)
-            res = calc_result(op_choice, my_choice)
-            sum += res
+            sum += pick_choice_result(data)
 
-    print(f"Sum: {sum}")
+    print(f"Total: {sum}")
