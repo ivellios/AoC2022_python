@@ -1,4 +1,4 @@
-from .day4 import check_contains, check_overlaps
+from .day4 import check_overlaps
 
 
 def check_duty_overlapping(line):

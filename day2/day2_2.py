@@ -1,5 +1,3 @@
-import os
-
 from .day2_consts import (
     expected_results,
     DRAW,

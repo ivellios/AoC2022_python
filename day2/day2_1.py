@@ -1,5 +1,3 @@
-import os
-
 from .day2_consts import RESULTS, my_choices, opponent_choices
 
 
