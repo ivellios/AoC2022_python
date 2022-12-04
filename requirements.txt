@@ -4,3 +4,4 @@ ipython
 ipdb
 black
 flake8
+click

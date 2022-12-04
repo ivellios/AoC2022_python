@@ -29,7 +29,7 @@ def calc_result(op_choice: str, my_choice: str) -> int:
     return compare(op_choice, my_choice) + my_choices[my_choice]
 
 
-def pick_choice_result(data: str):
+def run(data: str):
     op_choice, expected_result = data.split(" ")
     my_choice = result_to_choice(op_choice, expected_result)
     return calc_result(op_choice, my_choice)

@@ -1,6 +1,4 @@
-import pytest
-
-from ..day4_1 import check_bad_duties
+from ..day4_1 import run
 
 
 def test_day4_1():
@@ -14,6 +12,6 @@ def test_day4_1():
     ]
     total = 0
     for i in input:
-        total += check_bad_duties(i)
+        total += run(i)
 
     assert total == 2

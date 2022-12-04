@@ -10,4 +10,8 @@ def find_badge(group: list) -> str:
     )
 
 
-badge_value = lambda lines: char_to_value(find_badge(lines))
+def run(lines):
+    return char_to_value(find_badge(lines))
+
+
+run.lines_to_read = 3

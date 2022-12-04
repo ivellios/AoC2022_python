@@ -1,4 +1,4 @@
-from ..day4_2 import check_duty_overlapping
+from ..day4_2 import run
 
 
 def test_day4_1():
@@ -12,6 +12,6 @@ def test_day4_1():
     ]
     total = 0
     for i in input:
-        total += check_duty_overlapping(i)
+        total += run(i)
 
     assert total == 4

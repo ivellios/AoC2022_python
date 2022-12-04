@@ -25,3 +25,6 @@ def run(filename):
 
         sums.sort()
         print(sums[-1], sums[-2], sums[-3], sums[-3] + sums[-2] + sums[-1])
+
+
+run.no_file_wrapping = True

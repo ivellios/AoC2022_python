@@ -9,5 +9,5 @@ def calc_result(op_choice: str, my_choice: str) -> int:
     return compare(op_choice, my_choice) + my_choices[my_choice]
 
 
-def choice_result_value(data):
+def run(data):
     return calc_result(*data.split(" "))
