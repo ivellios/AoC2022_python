@@ -11,19 +11,3 @@ def find_badge(group: list) -> str:
 
 
 badge_value = lambda lines: char_to_value(find_badge(lines))
-
-
-def rucksacks(filename):
-    total = 0
-    with open(filename, "r") as f:
-        while True:
-            data = [
-                f.readline().rstrip("\n"),
-                f.readline().rstrip("\n"),
-                f.readline().rstrip("\n"),
-            ]
-            if not data or "" in data:
-                break
-            total += char_to_value(find_badge(data))
-
-    print("Total: ", total)

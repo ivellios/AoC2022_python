@@ -13,17 +13,3 @@ def calc_result(op_choice: str, my_choice: str) -> int:
 
 def choice_result_value(data):
     return calc_result(*data.split(" "))
-
-
-def run(filename):
-    sum = 0
-    with open(filename, "r+") as f:
-        while True:
-            data = f.readline()
-            if not data:
-                break
-
-            data = data.rstrip(os.linesep)
-            sum += choice_result_value(data)
-
-    print(f"Sum: {sum}")
