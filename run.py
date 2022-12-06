@@ -22,8 +22,9 @@ def run(day, task):
         return
 
     ltr = fun.lines_to_read if hasattr(fun, "lines_to_read") else 1
+    answer_text = fun.answer_text if hasattr(fun, "answer_text") else "Total: "
 
-    run_with_file(fun, f"data/day{day}.txt", lines_to_read=ltr)
+    run_with_file(fun, f"data/day{day}.txt", lines_to_read=ltr, answer_text=answer_text)
 
 
 if __name__ == "__main__":
