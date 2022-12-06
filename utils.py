@@ -1,4 +1,6 @@
-def run_with_file(func: callable, filename: str, lines_to_read=1, answer_text="Total: "):
+def run_with_file(
+    func: callable, filename: str, lines_to_read=1, answer_text="Total: "
+):
     total = 0
     with open(filename, "r") as f:
         while True:
