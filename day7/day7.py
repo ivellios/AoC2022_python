@@ -2,7 +2,6 @@ import json
 
 
 class Processor:
-
     def __init__(self):
         self.tree = dict()
         self.curdir = []
@@ -32,7 +31,7 @@ class Processor:
             self.tree[self.cur] = 0
             print("Going in ", self.cur)
         else:
-            values = line.split(' ')
+            values = line.split(" ")
             size = int(values[0])
             print("Adding ", size)
             self.tree[self.cur] += size

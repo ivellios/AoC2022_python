@@ -38,11 +38,24 @@ def test_parse_dirs():
     p.process_to_root()
 
     result = p.tree
-    assert json.dumps(result) == json.dumps({'["/"]': 48381165, '["/", "a"]': 94853, '["/", "a", "e"]': 584, '["/", "d"]': 24933642})
+    assert json.dumps(result) == json.dumps(
+        {
+            '["/"]': 48381165,
+            '["/", "a"]': 94853,
+            '["/", "a", "e"]': 584,
+            '["/", "d"]': 24933642,
+        }
+    )
+
 
 def test_get_dir():
     p = Processor()
-    p.tree = {'["/"]': 48381165, '["/", "a"]': 94853, '["/", "a", "e"]': 584, '["/", "d"]': 24933642}
+    p.tree = {
+        '["/"]': 48381165,
+        '["/", "a"]': 94853,
+        '["/", "a", "e"]': 584,
+        '["/", "d"]': 24933642,
+    }
 
     result = p.get_dirs_size_below(100000)
 
