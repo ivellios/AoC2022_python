@@ -57,9 +57,9 @@ class Processor:
         return sum(self.tree[dir] for dir in self.tree if self.tree[dir] <= threshold)
 
     def get_sorted_tree(self):
-        return sorted([
-            (key, self.tree[key]) for key in self.tree
-        ], key=lambda element: element[1])
+        return sorted(
+            [(key, self.tree[key]) for key in self.tree], key=lambda element: element[1]
+        )
 
     @property
     def free_space(self):
@@ -73,7 +73,9 @@ class Processor:
         sorted_tree = self.get_sorted_tree()
         pprint(sorted_tree)
 
-        filtered_tree = list(filter(lambda element: element[1] >= self.space_needed, sorted_tree))
+        filtered_tree = list(
+            filter(lambda element: element[1] >= self.space_needed, sorted_tree)
+        )
 
         return filtered_tree[0][1]
 
