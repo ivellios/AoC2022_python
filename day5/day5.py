@@ -72,8 +72,6 @@ def process_move(filename: str, cranemover: callable):
 
             line = data.rstrip(os.linesep)
 
-            print(line)
-
             # reading stacks
             if check_input_is_move(line) is None:
                 stack_lines.append(line)
