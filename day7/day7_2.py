@@ -2,9 +2,8 @@ from .day7 import processor_factory
 
 
 def run(filename):
-    p = processor_factory(filename)
-
-    res = p.get_dirs_size_below(100000)
+    p = processor_factory(filename, size=70000000, update_size=30000000)
+    res = p.get_most_fitting_dir_size()
     print("Result: ", res)
     return res
 

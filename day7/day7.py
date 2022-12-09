@@ -1,8 +1,12 @@
 import json
+import os
+from pprint import pprint
 
 
 class Processor:
-    def __init__(self):
+    def __init__(self, size=0, update_size=0):
+        self.size = size
+        self.update_size = update_size
         self.tree = dict()
         self.curdir = []
 
@@ -51,3 +55,40 @@ class Processor:
 
     def get_dirs_size_below(self, threshold: int):
         return sum(self.tree[dir] for dir in self.tree if self.tree[dir] <= threshold)
+
+    def get_sorted_tree(self):
+        return sorted([
+            (key, self.tree[key]) for key in self.tree
+        ], key=lambda element: element[1])
+
+    @property
+    def free_space(self):
+        return self.size - self.tree['["/"]']
+
+    @property
+    def space_needed(self):
+        return self.update_size - self.free_space
+
+    def get_most_fitting_dir_size(self):
+        sorted_tree = self.get_sorted_tree()
+        pprint(sorted_tree)
+
+        filtered_tree = list(filter(lambda element: element[1] >= self.space_needed, sorted_tree))
+
+        return filtered_tree[0][1]
+
+
+def processor_factory(filename, size=0, update_size=0):
+    p = Processor(size=size, update_size=update_size)
+    with open(filename, "r+") as f:
+        while True:
+            data = f.readline()
+            if not data:
+                break
+            line = data.rstrip(os.linesep)
+            pprint(line)
+            p.process(line)
+
+    p.process_to_root()
+
+    return p

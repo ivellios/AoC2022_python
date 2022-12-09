@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from day7.day7 import Processor
+from ..day7 import Processor
 
 
 def test_parse_dirs():
@@ -60,3 +60,28 @@ def test_get_dir():
     result = p.get_dirs_size_below(100000)
 
     assert result == 95437
+
+
+def test_get_most_fitting_dir():
+    p = Processor(size=70000000, update_size=30000000)
+    p.tree = {
+        '["/"]': 48381165,
+        '["/", "a"]': 94853,
+        '["/", "a", "e"]': 584,
+        '["/", "d"]': 24933642,
+    }
+
+    result = p.get_most_fitting_dir_size()
+
+    assert result == 24933642
+
+
+def test_get_free_space():
+    p = Processor(size=70000000)
+    p.tree = {
+        '["/"]': 48381165,
+        '["/", "a"]': 94853,
+        '["/", "a", "e"]': 584,
+        '["/", "d"]': 24933642,
+    }
+    assert p.free_space == 21618835
