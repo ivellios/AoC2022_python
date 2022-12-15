@@ -1,7 +1,27 @@
 import os
 
 
-class Processor:
+
+class BaseProcessor:
+
+    def process_file_data(self, filename):
+        with open(filename, "r+") as f:
+            while True:
+                data = f.readline()
+                if not data:
+                    break
+                line = data.rstrip(os.linesep)
+                row_data = [int(char) for char in line]
+                self.res_rows.append(self.process_row(row_data))
+
+        return self.process()
+
+
+    def process(self):
+        raise NotImplementedError()
+
+
+class Processor(BaseProcessor):
     def __init__(self, size=0):
         self.size = size
         self.res_rows = []
@@ -23,18 +43,6 @@ class Processor:
 
         res = self.sum_all(self.union(self.res_rows, self.res_cols))
         return res
-
-    def process_file_data(self, filename):
-        with open(filename, "r+") as f:
-            while True:
-                data = f.readline()
-                if not data:
-                    break
-                line = data.rstrip(os.linesep)
-                row_data = [int(char) for char in line]
-                self.res_rows.append(self.process_row(row_data))
-
-        return self.process()
 
     def process_row(self, data: list[int], build_cols=True):
         result = []
